@@ -1,0 +1,49 @@
+<div class="container">
+
+    <div class="container card" id="AddAsset">
+        <h1>Add Asset</h1>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Barcode: </label>
+                <input class="form-control" type="text" formControlName="barcode">
+            </div>
+            <div class="form-group">
+                <label>Asset Type:</label>
+                <input class="form-control" type="text" formControlName="assetType">
+            </div>
+            <div class="form-group">
+                <label>Description:</label>
+                <input class="form-control" type="text" formControlName="description">
+            </div>
+            <div class="form-group">
+                <label>Room Location:</label>
+                <input class="form-control" type="text" formControlName="locationRoom">
+            </div>
+            <div class="form-group">
+                <label>Site Location:</label>
+                <input class="form-control" type="text" formControlName="locationSite">
+            </div>
+            <div class="form-group">
+                <label>Sentinel: </label>
+                <select class="form-control" type="text" formControlName="isSentinel">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Healthcare:</label>
+                <select class="form-control" type="text" formControlName="isHealthcare">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Comments:</label>
+                <input class="form-control" type="text" formControlName="comment">
+            </div>
+            <div>
+                <button class="btn btn-success btn-block" type="submit" [disabled]="!profileForm.valid">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

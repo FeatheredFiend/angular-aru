@@ -1,0 +1,62 @@
+<div class="">
+	<div class=" " id="">
+		<mat-form-field>
+			<input matInput (keyup)="applyFilterAssets($event.target.value)" placeholder="Filter">
+		</mat-form-field>
+		<div class="example-container mat-elevation-z8">
+			<table mat-table [dataSource]="dataSourceAssets" matSort>
+				<ng-container matColumnDef="id">
+					<th onclick="test()" mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.id }} </td>
+				</ng-container>
+				<ng-container matColumnDef="barcode">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Barcode </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.barcode }} </td>
+				</ng-container>
+				<ng-container matColumnDef="assetType">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Asset Type </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.assetType }} </td>
+				</ng-container>
+				<ng-container matColumnDef="description">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.description }} </td>
+				</ng-container>
+				<ng-container matColumnDef="locationRoom">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Room Location </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.locationRoom }} </td>
+				</ng-container>
+				<ng-container matColumnDef="locationSite">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Site Location </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.locationSite }} </td>
+				</ng-container>
+				<ng-container matColumnDef="isSentinel">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Sentinel </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.isSentinel }} </td>
+				</ng-container>
+				<ng-container matColumnDef="isHealthcare">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Healthcare </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.isHealthcare }} </td>
+				</ng-container>
+				<ng-container matColumnDef="comment">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Comments </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.comment }} </td>
+				</ng-container>
+				<ng-container matColumnDef="isDecommissioned">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Decommissioned </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.isDecomissioned }} </td>
+				</ng-container>
+				<ng-container matColumnDef="dateDecommissioned">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> Date Decommissioned </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.dateDecomissioned }} </td>
+				</ng-container>
+				<ng-container matColumnDef="userDecommissioned">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header> User Decommissioned </th>
+					<td mat-cell *matCellDef="let asset"> {{ asset.userDecomissioned }} </td>
+				</ng-container>
+				<tr mat-header-row *matHeaderRowDef="displayedColumnsAssets; sticky: true"></tr>
+				<tr mat-row *matRowDef="let row; columns: displayedColumnsAssets;"></tr>
+			</table>
+			<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+		</div>
+	</div>
+</div>

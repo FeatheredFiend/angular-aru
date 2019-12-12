@@ -1,0 +1,50 @@
+table {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin:0;
+    padding:0;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  table tr {
+    border: 1px solid #ddd;
+    padding: 5px;
+		background: #fff;
+
+  }
+
+  table th, table td {
+    padding: 10px;
+    text-align: center;
+
+  }
+
+  table th {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+
+@media only screen and (max-width: 800px) {
+	
+	#jobPivot .cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+	#jobPivot * html .cf { zoom: 1; }
+	#jobPivot *:first-child+html .cf { zoom: 1; }
+	
+	#jobPivot table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+ 
+	#jobPivot th,
+	#jobPivot td { margin: 0; vertical-align: top; }
+	#jobPivot th { text-align: left; }
+	
+	#jobPivot table { display: block; position: relative; width: 100%; }
+	#jobPivot thead { display: block; float: left;}
+	#jobPivot tbody { display: block; width: auto; position: relative; overflow-x: auto; white-space: nowrap; }
+	#jobPivot thead tr { display: block; }
+	#jobPivot th { display: block; text-align: right; }
+	#jobPivot tbody tr { display: inline-block; vertical-align: top; }
+	#jobPivot td { display: block;  text-align: left; }
+ 
+}
+ 
