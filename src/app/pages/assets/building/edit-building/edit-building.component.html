@@ -1,0 +1,39 @@
+<div id="theList">
+    <h2>The list</h2>
+  
+    <div class="list-group">
+      <div *ngFor="let item of buildings;let i = index;" class="list-group-item row">
+        <div class="col-md-3">
+            <input type="text"
+            name="id"
+                   [(ngModel)]="buildings[i].id"
+                   class="form-control"
+                   disabled
+                   #id="ngModel">
+          </div>
+        <div class="col-md-3">
+          <input type="text"
+          name="name"
+                 [(ngModel)]="buildings[i].name"
+                 class="form-control"
+                 required
+                 #name="ngModel">
+        </div>
+        <div class="col-md-3">
+          <input type="text"
+                 [(ngModel)]="buildings[i].organisation"
+                 class="form-control"
+                 required
+                 pattern="^[a-zA-Z]+$"
+                 #organisation="ngModel">
+        </div>
+        <div class="col-md-3">
+          <input type="button"
+                 value="Update"
+                 class="btn btn-success btn-sm"
+                 [disabled]="name.invalid || organisation.invalid"
+                 (click)="updateBuilding(name, organisation, id)">
+        </div>
+      </div>
+    </div>
+  </div>

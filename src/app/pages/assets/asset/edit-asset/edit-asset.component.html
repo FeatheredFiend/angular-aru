@@ -1,0 +1,38 @@
+<div id="theList">
+ 
+    <div class="list-group">
+      <div *ngFor="let item of assets;let i = index;" class="list-group-item row">
+        <div class="col-md-3">
+            <input type="text"
+            name="id"
+                   [(ngModel)]="assets[i].id"
+                   class="form-control"
+                   disabled
+                   #id="ngModel">
+          </div>
+        <div class="col-md-3">
+          <input type="text"
+          name="barcode"
+                 [(ngModel)]="assets[i].barcode"
+                 class="form-control"
+                 required
+                 #barcode="ngModel">
+        </div>
+        <div class="col-md-3">
+          <input type="text"
+                 [(ngModel)]="assets[i].description"
+                 class="form-control"
+                 required
+                 pattern="^[a-zA-Z]+$"
+                 #description="ngModel">
+        </div>
+        <div class="col-md-3">
+          <input type="button"
+                 value="Update"
+                 class="btn btn-success btn-sm"
+                 [disabled]="barcode.invalid || description.invalid"
+                 (click)="updateAsset(barcode, description, id)">
+        </div>
+      </div>
+    </div>
+  </div>

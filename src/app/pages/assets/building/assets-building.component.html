@@ -1,0 +1,43 @@
+<div id="accordion">
+	<div class="card">
+		<div class="card-header" id="headingOne">
+			<h5 class="mb-0">
+				<button class="btn btn-block collapsed btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+					aria-controls="collapseOne">
+					Add / Edit Building
+				</button>
+			</h5>
+		</div>
+		<div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-sm-12 col-md-12 col-lg-6">
+						<add-building></add-building>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-6">
+						<edit-building></edit-building>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header" id="headingTwo">
+			<h5 class="mb-0">
+				<button class="btn btn-block btn-link" data-toggle="collapse" data-target="#collapseTwo"
+					aria-expanded="true" aria-controls="collapseTwo">
+					View Buildings
+				</button>
+			</h5>
+		</div>
+		<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 ">
+						<view-building-table></view-building-table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

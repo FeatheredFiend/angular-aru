@@ -1,0 +1,49 @@
+<div class="container">
+
+    <div class="container card" id="AddAsset">
+        <h1>Add Asset</h1>
+        <form  #f="ngForm" name="addForm" (submit)="addAsset(f)">
+            <div class="form-group">
+                <label>Barcode: </label>
+                <input type="text"  class="form-control" name="barcode" [(ngModel)]="asset.barcode" #assetBarcode="ngModel" required pattern="^[a-zA-Z]+$">
+            </div>
+            <div class="form-group">
+                <label>Asset Type:</label>
+                <input class="form-control" type="text"  name="assetType" [(ngModel)]="asset.assetType" #assetAssetType="ngModel" required pattern="^[a-zA-Z]+$">
+            </div>
+            <div class="form-group">
+                <label>Description:</label>
+                <input class="form-control" type="text" name="description" [(ngModel)]="asset.description" #assetDescription="ngModel" required pattern="^[a-zA-Z]+$">
+            </div>
+            <div class="form-group">
+                <label>Room Location:</label>
+                <input class="form-control" type="text"  name="locationRoom" [(ngModel)]="asset.locationRoom" #assetLocationRoom="ngModel" required pattern="^[a-zA-Z]+$">
+            </div>
+            <div class="form-group">
+                <label>Site Location:</label>
+                <input class="form-control" type="text" name="locationSite" [(ngModel)]="asset.locationSite" #assetLocationSite="ngModel" required pattern="^[a-zA-Z]+$">
+            </div>
+            <div class="form-group">
+                <label>Sentinel: </label>
+                <select class="form-control" type="text"  name="isSentinel" [(ngModel)]="asset.isSentinel" #assetIsSentinel="ngModel" required pattern="^[a-zA-Z]+$">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Healthcare:</label>
+                <select class="form-control" type="text"  name="isHealthcare" [(ngModel)]="asset.isHealthcare" #assetIsHealthcare="ngModel" required pattern="^[a-zA-Z]+$">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Comments:</label>
+                <input class="form-control" type="text"  name="comment" [(ngModel)]="asset.comment" #assetComment="ngModel" required pattern="^[a-zA-Z]+$">
+            </div>
+            <div>
+                <button class="btn btn-success btn-block" type="submit" [disabled]="!addAssetForm.valid">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

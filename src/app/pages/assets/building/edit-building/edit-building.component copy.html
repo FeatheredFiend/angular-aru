@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="container card" id="EditAsset">
+        <h1>Edit Asset</h1>
+        <form [formGroup]="editAssetForm" >
+            <div class="form-group">
+                <label>Barcode: </label>
+                <input class="form-control" #barcode name="barcode" type="text" formControlName="barcode">
+            </div>
+            <div class="form-group">
+                <label>Description:</label>
+                <input class="form-control" #description name="description" type="text" formControlName="description">
+            </div>
+            <div class="form-group">
+                <label>Room Location:</label>
+                <input class="form-control" #locationroom name="locationroom" type="text" formControlName="locationRoom">
+            </div>
+            <div class="form-group">
+                <label>Sentinel: </label>
+                <select class="form-control" #sentinel name="sentinel" type="text" formControlName="isSentinel">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Healthcare:</label>
+                <select class="form-control" #healthcare name="healthcare" type="text" formControlName="isHealthcare">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Comments:</label>
+                <input class="form-control" #comment name="comment" type="text" formControlName="comment">
+            </div>
+            <div class="form-group">
+                <label>Decommissioned:</label>
+                <select class="form-control" #decommissioned name="decommissioned" formControlName="isDecommissioned">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success btn-block" type="submit" [disabled]="!editAssetForm.valid">Submit</button>
+            </div>
+        </form>
+    </div>
